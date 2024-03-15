@@ -3,7 +3,7 @@ import java.awt.event.KeyListener;
 public class Camera implements KeyListener{
     public double xPos, yPos, xDir, yDir, xPlane, yPlane;
     public boolean left, right, forward, back;
-    public final double MOVE_SPEED = .08;
+    public double MOVE_SPEED = .08;
     public final double ROTATION_SPEED = .045;
 
     public Camera(double x, double y, double xd, double yd, double xp, double yp)
@@ -24,6 +24,8 @@ public class Camera implements KeyListener{
             forward = true;
         if((key.getKeyCode() == KeyEvent.VK_S))
             back = true;
+        if((key.getKeyCode() == KeyEvent.VK_SHIFT))
+            MOVE_SPEED = MOVE_SPEED*2;
     }
     public void keyReleased(KeyEvent key) {
         if((key.getKeyCode() == KeyEvent.VK_A))
@@ -34,6 +36,8 @@ public class Camera implements KeyListener{
             forward = false;
         if((key.getKeyCode() == KeyEvent.VK_S))
             back = false;
+        if((key.getKeyCode() == KeyEvent.VK_SHIFT))
+            MOVE_SPEED = MOVE_SPEED/2;
         if(key.getKeyCode() == KeyEvent.VK_SPACE)
         {
             System.out.println("Man you cant jump, You's FAT !!!");

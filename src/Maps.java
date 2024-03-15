@@ -101,17 +101,17 @@ public class Maps {
 
     public static int[][] getMap3() {
         Random rand = new Random();
-        for(int i=0;i<200;i++)
+        for(int i=0;i<300;i++)
         {
             int x=rand.nextInt(38);
             int y=rand.nextInt(50);
             map3[x][y] = rand.nextInt(4)+1;
         }
-        for(int i=0;i<50;i++)
+        for(int i=0;i<70;i++)
         {
             int x=rand.nextInt(38);
             int y=rand.nextInt(50);
-            map3[x][y] = rand.nextInt(2)+5;
+            map3[x][y] = rand.nextInt(3)+5;
         }
         map3[4][4] = 0;
         return map3;

@@ -13,6 +13,8 @@ public class Texture {
     public static Texture sonapanchod =  new Texture("src/res/sonapanchod.png",64);
 
     public static Texture sona2 =  new Texture("src/res/sona2.png",64);
+
+    public static Texture sona3 = new Texture("src/res/sona3.png",64);
     public int[] pixels;
     private String loc;
     public final int SIZE;

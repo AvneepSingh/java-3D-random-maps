@@ -40,6 +40,7 @@ public static int[][] map =Maps.getMap3();
         textures.add(Texture.stone);
         textures.add(Texture.sonapanchod);
         textures.add(Texture.sona2);
+        textures.add(Texture.sona3);
         screen = new Screen(map, mapWidth, mapHeight, textures, 640*2,480*2);
         camera = new Camera(4.5, 4.5, 0.72, 0, 0, -0.66);
         addKeyListener(camera);
