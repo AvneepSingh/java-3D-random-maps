@@ -29,7 +29,7 @@ public static int[][] map =Maps.getMap3();
         setResizable(false);
         setTitle("3D Engine");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBackground(Color.black);
+        setBackground(Color.blue);
         setLocationRelativeTo(null);
         setVisible(true);
         start();
@@ -42,7 +42,7 @@ public static int[][] map =Maps.getMap3();
         textures.add(Texture.sona2);
         textures.add(Texture.sona3);
         screen = new Screen(map, mapWidth, mapHeight, textures, 640*2,480*2);
-        camera = new Camera(4.5, 4.5, 0.72, 0, 0, -0.66);
+        camera = new Camera(4.5, 4.5, 0.6, 0, 0, -0.66);
         addKeyListener(camera);
     }
     private synchronized void start() {
@@ -81,7 +81,7 @@ public static int[][] map =Maps.getMap3();
                 //handles all the logic restricted time
                 while(camera==null){System.out.println("...");}
                 camera.update(map);
-                //while(screen==null){System.out.println("waiting {screen}");}
+                while(screen==null){System.out.println("waiting {screen}");}
                 screen.update(camera, pixels);
                 delta--;
             }

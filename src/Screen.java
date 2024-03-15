@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.awt.Color;
+import java.util.Random;
 
 public class Screen {
     public int[][] map;
@@ -16,11 +17,23 @@ public class Screen {
     }
 
     public int[] update(Camera camera, int[] pixels) {
+        Color sky_night = new Color(5,15,45);
+        Color gray = Color.LIGHT_GRAY;
+        Random rand = new Random();
         for(int n=0; n<pixels.length/2; n++) {
-            if(pixels[n] != Color.DARK_GRAY.getRGB()) pixels[n] = Color.DARK_GRAY.getRGB();
+            if(pixels[n]!=sky_night.getRGB() && pixels[n]!=gray.getRGB())
+            {
+                if(rand.nextInt(10000)==0)
+                    pixels[n] = gray.getRGB();
+                else
+                    pixels[n] = sky_night.getRGB();
+            }
         }
+        Color green = new Color(10,80,0);
         for(int i=pixels.length/2; i<pixels.length; i++){
-            if(pixels[i] != Color.gray.getRGB()) pixels[i] = Color.gray.getRGB();
+            if(pixels[i] != green.getRGB()) {
+                pixels[i] = green.getRGB();
+            }
         }
 
         for(int x=0; x<width; x=x+1) {
